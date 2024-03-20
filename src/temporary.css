@@ -1,0 +1,9 @@
+:root {
+    --light-theme-mode-1-surface-default: rgb(255, 255, 255);
+    --light-theme-mode-1-background-default-default: rgb(249, 249, 251);
+    --light-theme-mode-1-border-default: rgb(213, 213, 221);
+    --light-theme-mode-1-action-primary-active: rgb(255, 83, 36);
+    --light-theme-mode-1-action-primary-hover: rgb(255, 138, 106);
+    --light-theme-mode-1-action-secondary-default: rgb(255, 255, 255);
+    --light-theme-mode-1-action-secondary-hover: rgb(246, 246, 249);
+}
