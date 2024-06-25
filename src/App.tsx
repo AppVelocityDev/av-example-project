@@ -6,11 +6,6 @@ import Grid from '@mui/material/Grid';
 
 import style from './App.module.css';
 
-import '@app-velocity/nineth-may-test/style.css';
-
-// @ts-ignore
-import { Variables, CommonStyles } from '@app-velocity/nineth-may-test';
-
 import { colors } from './configs/colors';
 import { typography } from './configs/typography';
 import { effects } from './configs/effects';
@@ -20,6 +15,21 @@ import { colors as colors2 } from './configs/colorsJS';
 import { typography as typography2 } from './configs/typographyJS';
 import { effects as effects2 } from './configs/effectsJS';
 import { sizing as sizing2 } from './configs/sizingJS';
+
+type VariablesType = {
+  variables: {
+    sizing: Record<string, any>;
+    colors: Record<string, any>;
+  };
+} | Record<any, any>;
+
+type CommonStylesType = {
+  typography: Record<string, any>;
+  effects: Record<string, any>;
+} | Record<any, any>;
+
+const Variables: VariablesType = {};
+const CommonStyles: CommonStylesType = {};
 
 function App() {
   const [value, setValue] = React.useState<number>(0);
