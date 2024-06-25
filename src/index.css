@@ -3,3 +3,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.effect_preview_image {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.effect_preview_bg_1 {
+  background-color: #000;
+  flex: 1;
+}
+
+.effect_preview_bg_2 {
+  background-color: #a7adbc;
+  flex: 1;
+}
+
+.effect_preview_bg_3 {
+  background-color: #fff;
+  flex: 1;
+}
+
+.effect_component {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
