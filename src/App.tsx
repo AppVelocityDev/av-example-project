@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
 
 import style from './App.module.css';
+
+// import '@app-velocity/nineth-may-test/style.css';
 
 import { colors } from './configs/colors';
 import { typography } from './configs/typography';
@@ -28,8 +30,28 @@ type CommonStylesType = {
   effects: Record<string, any>;
 } | Record<any, any>;
 
-const Variables: VariablesType = {};
-const CommonStyles: CommonStylesType = {};
+type ModuleType = {
+  Variables: VariablesType;
+  CommonStyles: CommonStylesType;
+}
+
+let Variables: VariablesType;
+let CommonStyles: CommonStylesType;
+
+async function loadModule(modulePath: string) {
+  try {
+    const module = await import(modulePath) as unknown as ModuleType;
+
+    Variables = module.Variables;
+    CommonStyles = module.CommonStyles;
+  } catch (error) {
+    console.warn('Module not found, using fallback value.');
+
+    Variables = {};
+    CommonStyles = {};
+  }
+}
+// loadModule('@app-velocity/nineth-may-test');
 
 function App() {
   const [value, setValue] = React.useState<number>(0);
@@ -38,7 +60,7 @@ function App() {
     setValue(newValue);
   };
 
-  return (
+  return useMemo(() => (
     <div className={style.root}>
       <h2>Variables preview</h2>
         <Tabs
@@ -198,7 +220,7 @@ function App() {
                              width: '50px',
                              height: '50px',
                              backgroundColor: '#a7adbc',
-                             borderRadius: `calc(${Variables?.variables?.sizing?.Mode1[varName] ?? 0} * 1px)`,
+                             borderRadius: `calc(${Variables?.variables?.sizing?.Mode1[varName]} * 1px)`,
                              boxSizing: 'border-box'
                            }}
                       />
@@ -230,7 +252,7 @@ function App() {
         </Grid>
         ): null}
       </div>
-  );
+  ), [Variables, CommonStyles, value]);
 }
 
 export default App;
