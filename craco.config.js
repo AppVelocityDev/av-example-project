@@ -12,7 +12,7 @@ module.exports = {
       plugin: cracoBabelLoader,
       options: {
         includes: [
-          resolvePackage('node_modules/@app-velocity/playground-fifteen-july'),
+          resolvePackage('node_modules/@app-velocity/<ADD-YOUR-PACKAGE-ID-HERE>'),
         ],
       },
     },

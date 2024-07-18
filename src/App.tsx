@@ -5,11 +5,11 @@ import Tab from '@mui/material/Tab';
 
 import style from './App.module.css';
 
-import '@app-velocity/playground-fifteen-july/common-styles.css';
-import '@app-velocity/playground-fifteen-july/common-styles-var.css';
+import '@app-velocity/<ADD-YOUR-PACKAGE-ID-HERE>/common-styles.css';
+import '@app-velocity/<ADD-YOUR-PACKAGE-ID-HERE>/common-styles-var.css';
 
-// import { variables } from '@app-velocity/playground-fifteen-july/variables';
-// import { playgroundColorVariable } from '@app-velocity/playground-fifteen-july/index';
+// import { variables } from '@app-velocity/<ADD-YOUR-PACKAGE-ID-HERE>/variables';
+// import { playgroundColorVariable } from '@app-velocity/<ADD-YOUR-PACKAGE-ID-HERE>/index';
 
 // ---- comment following block when using import from published package ------
 const playgroundColorVariable = '#fff';
